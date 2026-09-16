@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Удаление аккаунта — MusorDrop</title>
+<!--
+  Собрано tools/build_privacy.py из docs/delete-account.md. Руками не править:
+  правка исчезнет при следующей сборке. Ни одного внешнего ресурса —
+  страница о данных не должна сама ходить на чужие серверы.
+-->
+<style>
+  :root {
+    color-scheme: dark;
+    --ink: #0b0d12;
+    --panel: #131720;
+    --seam: #1f2735;
+    --chalk: #e8edf5;
+    --dim: #8b9bb4;
+    --accent: #e2b86b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 20px 80px;
+    background: var(--ink);
+    color: var(--dim);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 {
+    margin: 0 0 6px;
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--chalk);
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    margin: 40px 0 12px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  p, li { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; margin: 0 0 14px; }
+  li { margin-bottom: 6px; }
+  strong { color: var(--chalk); font-weight: 600; }
+  a { color: var(--chalk); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    background: var(--panel);
+    border: 1px solid var(--seam);
+    border-radius: 4px;
+    padding: 1px 5px;
+    word-break: break-all;
+  }
+  .table { overflow-x: auto; margin: 0 0 14px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--seam);
+    vertical-align: top;
+  }
+  th { color: var(--chalk); font-weight: 600; }
+  .meta {
+    margin: 0 0 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--seam);
+    font-size: 14px;
+  }
+  .lead {
+    background: var(--panel);
+    border: 1px solid var(--seam);
+    border-radius: 10px;
+    padding: 18px 20px 4px;
+  }
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--seam);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<main>
+<h1>Удаление аккаунта и данных — MusorDrop</h1>
+<p class="meta"><strong>Приложение:</strong> MusorDrop (<code>com.musordrop.game</code>)<br><strong>Контакт разработчика:</strong> <a href="mailto:narodniy.team@gmail.com">narodniy.team@gmail.com</a></p>
+<p>Эта страница объясняет, как удалить аккаунт в игре MusorDrop и все связанные с ним данные. Аккаунт в игре появляется только если вы входили через Google; без входа удалять нечего — прогресс лежит на самом телефоне.</p>
+<h2>Удалить в самом приложении</h2>
+<ol><li>Откройте MusorDrop и войдите в тот аккаунт Google, который хотите удалить.</li><li>Нажмите на аватар в шапке, чтобы открыть «Профиль».</li><li>Откройте «Настройки» — шестерёнка справа вверху.</li><li>Нажмите <strong>«Удалить аккаунт и данные из облака»</strong> и подтвердите.</li></ol>
+<p>Учётная запись и копия прогресса в облаке удаляются сразу. Прогресс на самом телефоне остаётся — игра продолжится без аккаунта.</p>
+<h2>Удалить без приложения</h2>
+<ol><li>Напишите письмо на адрес <strong><a href="mailto:narodniy.team@gmail.com">narodniy.team@gmail.com</a></strong>.</li><li>В теме укажите: <strong>Удаление аккаунта MusorDrop</strong>.</li><li>В письме укажите <strong>адрес электронной почты того аккаунта Google</strong>, которым вы входили в игру. Других сведений о вас у нас нет, и по нему мы найдём запись.</li><li>Отправьте письмо <strong>с того же адреса</strong> — так мы убедимся, что запрос исходит от владельца аккаунта.</li><li>Мы подтвердим получение и сообщим, когда удаление выполнено.</li></ol>
+<p>Запрос бесплатный, объяснять причину не нужно.</p>
+<h2>Что будет удалено</h2>
+<div class="table"><table><thead><tr><th>Данные</th><th>Где хранятся</th><th>Что с ними будет</th></tr></thead><tbody><tr><td>Идентификатор аккаунта</td><td>Firebase Authentication</td><td>удаляется</td></tr><tr><td>Адрес электронной почты</td><td>Firebase Authentication</td><td>удаляется</td></tr><tr><td>Отображаемое имя</td><td>Firebase Authentication</td><td>удаляется</td></tr><tr><td>Ссылка на фото профиля</td><td>Firebase Authentication</td><td>удаляется</td></tr><tr><td>Баланс и инвентарь</td><td>Cloud Firestore</td><td>удаляется</td></tr><tr><td>Статистика и время бонусов</td><td>Cloud Firestore</td><td>удаляется</td></tr></tbody></table></div>
+<p>Мы не храним о вас ничего, кроме перечисленного: ни ника, ни истории операций, ни переписки. Данные рекламы собирает Яндекс как самостоятельный оператор — сбросить рекламный идентификатор можно в настройках Android: «Google» → «Реклама».</p>
+<h2>Сроки</h2>
+<ul><li><strong>Сразу</strong> — при удалении в самом приложении.</li><li><strong>До 30 дней</strong> — при запросе письмом.</li><li><strong>До 30 дней после удаления</strong> — резервные копии Google могут ещё содержать удалённые данные, дальше они перезаписываются автоматически и восстановлению не подлежат.</li></ul>
+<p>Подробнее о данных — в политике конфиденциальности: <a href="https://bmxer32.github.io/musordrop-privacy/">https://bmxer32.github.io/musordrop-privacy/</a></p>
+
+</main>
+</body>
+</html>
